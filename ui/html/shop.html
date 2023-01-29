@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КНИЖНЫЙ МАГАЗИН</title>
+</head>
+
+<body>
+    <center>
+        <h1> Магазин чая</h1>
+        <h2>Форма заказа</h2>
+    </center>
+    {{if .Success}}
+    <center><h3>Вы заказали: </br>
+        {{range $key, $value := .ListTea}}
+        {{if ne $value 0}}
+        {{ $key }} : {{ $value }} пачек<br>
+        {{end}}
+        {{end}}
+        С Вас {{ .Cost }} денег. <br><br>
+        При покупке от 10 действует 10% скидка. <br>
+        При покупке от 20 действует 10% скидка. <br>
+        И так до 50. <br>
+        В таком случае, с Вас {{ .Discount }} денег.<br><br>
+    </h3></center>
+    {{else}}
+    <form method=post>
+        <table align="center" cellspacing="10">
+            <tr>
+                <th>
+                    <details>
+                        <summary>Чай в пирамидках</summary>
+                        <table border=0>
+
+                            <tr bgcolor=#cccccc>
+                                <td width=150>Название</td>
+                                <td width=15>Количество</td>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName11" value="Fresh Mojito (20 пирамидок)">
+                                <th><a name="ProductOne">Fresh Mojito<br>(20 пирамидок)</a></th>
+                                <th align=center><input type="text" name="TeaCount11" size=3 maxlength=3 value="0"></th>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName12" value="Isabella Grape (20 пирамидок)">
+                                <th><a name="ProductTwo">Isabella Grape<br>(20 пирамидок)</a></td>
+                                <th align=center><input type="text" name="TeaCount12" size=3 maxlength=3 value="0"></th>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName13" value="Sunny Lemon (20 пирамидок)">
+                                <th><a name="ProductThree">Sunny Lemon<br>(20 пирамидок)</a></td>
+                                <th align=center><input type="text" name="TeaCount13" size=3 maxlength=3 value="0"></th>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName14" value="Blue Berries Blues (20 пирамидок)">
+                                <th><a name="ProductThree">Blue Berries Blues<br>(20 пирамидок)</a></td>
+                                <th align=center><input type="text" name="TeaCount14" size=3 maxlength=3 value="0"></th>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName15" value="Hugo Cocktail (20 пирамидок)">
+                                <th><a name="ProductThree">Hugo Cocktail<br>(20 пирамидок)</a></td>
+                                <th align=center><input type="text" name="TeaCount15" size=3 maxlength=3 value="0"></th>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName16" value="Hugo Cocktail (20 пирамидок)">
+                                <th><a name="ProductThree">Hugo Cocktail<br>(20 пирамидок)</a></td>
+                                <th align=center><input type="text" name="TeaCount16" size=3 maxlength=3 value="0"></th>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName17" value="Delicate Mango (20 пирамидок)">
+                                <th><a name="ProductThree">Delicate Mango<br>(20 пирамидок)</a></td>
+                                <th align=center><input type="text" name="TeaCount17" size=3 maxlength=3 value="0"></th>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName18" value="French Truffle (20 пирамидок)">
+                                <th><a name="ProductThree">French Truffle<br>(20 пирамидок)</a></td>
+                                <th align=center><input type="text" name="TeaCount18" size=3 maxlength=3 value="0"></th>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName19" value="White Bountea (20 пирамидок)">
+                                <th><a name="ProductThree">White Bountea<br>(20 пирамидок)</a></td>
+                                <th align=center><input type="text" name="TeaCount19" size=3 maxlength=3 value="0"></th>
+                            </tr>
+
+                        </table>
+
+                    </details>
+                </th>
+                <th>
+                    <details>
+                        <summary>Чай в сашетах</summary>
+                        <table border=0>
+
+                            <tr bgcolor=#cccccc>
+                                <td width=150>Название</td>
+                                <td width=15>Количество</td>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName21" value="Perfect Brunch (25 сашетов)">
+                                <th><a name="ProductOne">Perfect Brunch<br>(25 сашетов)</a></th>
+                                <th align=center><input type="text" name="TeaCount21" size=3 maxlength=3 value="0"></th>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName22" value="Tender Moments (25 сашетов)">
+                                <th><a name="ProductTwo">Tender Moments<br>(25 сашетов)</a></td>
+                                <th align=center><input type="text" name="TeaCount22" size=3 maxlength=3 value="0"></th>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName23" value="Pleasure Time (25 сашетов)">
+                                <th><a name="ProductThree">Pleasure Time<br>(25 сашетов)</a></td>
+                                <th align=center><input type="text" name="TeaCount23" size=3 maxlength=3 value="0"></th>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName24" value="Fantasy Peach (25 сашетов)">
+                                <th><a name="ProductThree">Fantasy Peach<br>(25 сашетов)</a></td>
+                                <th align=center><input type="text" name="TeaCount24" size=3 maxlength=3 value="0"></th>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName25" value="Exotic Lime (25 сашетов)">
+                                <th><a name="ProductThree">Exotic Lime<br>(25 сашетов)</a></td>
+                                <th align=center><input type="text" name="TeaCount25" size=3 maxlength=3 value="0"></th>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName26" value="Elegant Earl Grey (25 сашетов)">
+                                <th><a name="ProductThree">Elegant Earl Grey<br>(25 сашетов)</a></td>
+                                <th align=center><input type="text" name="TeaCount26" size=3 maxlength=3 value="0"></th>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName27" value="Delicate Black (25 сашетов)">
+                                <th><a name="ProductThree">Delicate Black<br>(25 сашетов)</a></td>
+                                <th align=center><input type="text" name="TeaCount27" size=3 maxlength=3 value="0"></th>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName28" value="Fresh Green (25 сашетов)">
+                                <th><a name="ProductThree">Fresh Green<br>(25 сашетов)</a></td>
+                                <th align=center><input type="text" name="TeaCount28" size=3 maxlength=3 value="0"></th>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName29" value="Perfect Brunch (100 сашетов)">
+                                <th><a name="ProductThree">Perfect Brunch<br>(100 сашетов)</a></td>
+                                <th align=center><input type="text" name="TeaCount29" size=3 maxlength=3 value="0"></th>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName210" value="Tender Moments (100 сашетов)">
+                                <th><a name="ProductThree">Tender Moments<br>(100 сашетов)</a></td>
+                                <th align=center><input type="text" name="TeaCount210" size=3 maxlength=3 value="0">
+                                </th>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName211" value="Elegant Earl Grey (100 сашетов)">
+                                <th><a name="ProductThree">Elegant Earl Grey<br>(100 сашетов)</a></td>
+                                <th align=center><input type="text" name="TeaCount211" size=3 maxlength=3 value="0">
+                                </th>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName212" value="Delicate Black (100 сашетов)">
+                                <th><a name="ProductThree">Delicate Black<br>(100 сашетов)</a></td>
+                                <th align=center><input type="text" name="TeaCount212" size=3 maxlength=3 value="0">
+                                </th>
+                            </tr>
+                        </table>
+
+                    </details>
+                </th>
+                <th>
+                    <details>
+                        <summary>Чай с витаминами</summary>
+                        <table border=0>
+
+                            <tr bgcolor=#cccccc>
+                                <td width=150>Название</td>
+                                <td width=15>Количество</td>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName31" value="Energy (15 пирамидок)">
+                                <th><a name="ProductOne">Energy<br>(15 пирамидок)</a></th>
+                                <th align=center><input type="text" name="TeaCount31" size=3 maxlength=3 value="0"></th>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName32" value="Relax (15 пирамидок)">
+                                <th><a name="ProductTwo">Relax<br>(15 пирамидок)</a></td>
+                                <th align=center><input type="text" name="TeaCount32" size=3 maxlength=3 value="0"></th>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName33" value="Immuno (15 пирамидок)">
+                                <th><a name="ProductThree">Immuno<br>(15 пирамидок)</a></td>
+                                <th align=center><input type="text" name="TeaCount33" size=3 maxlength=3 value="0"></th>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName34" value="Beauty (15 пирамидок)">
+                                <th><a name="ProductThree">Beauty<br>(15 пирамидок)</a></td>
+                                <th align=center><input type="text" name="TeaCount34" size=3 maxlength=3 value="0"></th>
+                            </tr>
+                        </table>
+
+                    </details>
+                </th>
+                <th>
+                    <details>
+                        <summary>Чай COLD TEA</summary>
+                        <table border=0>
+
+                            <tr bgcolor=#cccccc>
+                                <td width=150>Название</td>
+                                <td width=15>Количество</td>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName41" value="«Клубника, базилик» (12 пирамидок)">
+                                <th><a name="ProductOne">«Клубника, базилик»<br>(12 пирамидок)</a></th>
+                                <th align=center><input type="text" name="TeaCount41" size=3 maxlength=3 value="0"></th>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName42" value="«Клюква, асаи» (12 пирамидок)">
+                                <th><a name="ProductTwo">«Клюква, асаи»<br>(12 пирамидок)</a></td>
+                                <th align=center><input type="text" name="TeaCount42" size=3 maxlength=3 value="0"></th>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName43" value="«Клубника, лайм, мята» (12 пирамидок)">
+                                <th><a name="ProductThree">«Клубника, лайм, мята»<br>(12 пирамидок)</a></td>
+                                <th align=center><input type="text" name="TeaCount43" size=3 maxlength=3 value="0"></th>
+                            </tr>
+                        </table>
+
+                    </details>
+                </th>
+                <th>
+                    <details>
+                        <summary>Подарочные акции Чая</summary>
+                        <table border=0>
+
+                            <tr bgcolor=#cccccc>
+                                <td width=216>Название</td>
+                                <td width=15>Количество</td>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName51"
+                                    value="Dessert Tea Collection (58.5 г, 30 сашетов)">
+                                <th><a name="ProductOne">Dessert Tea Collection<br>(58.5 г, 30 сашетов)</a></th>
+                                <th align=center><input type="text" name="TeaCount51" size=3 maxlength=3 value="0"></th>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName52"
+                                    value="Desert Tea Collection Blooming (85.5 г, 40 сашетов)">
+                                <th><a name="ProductTwo">Desert Tea Collection Blooming<br>(85.5 г, 40 сашетов)</a></td>
+                                <th align=center><input type="text" name="TeaCount52" size=3 maxlength=3 value="0"></th>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName53"
+                                    value="Pleasure Time. (52.8 г, ассорти 30 пирамидок)">
+                                <th><a name="ProductThree">Pleasure Time.<br>(52.8 г, ассорти 30 пирамидок)</a></td>
+                                <th align=center><input type="text" name="TeaCount53" size=3 maxlength=3 value="0"></th>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName54" value="Orange Spritz Cocktail (12 пирамидок)">
+                                <th><a name="ProductThree">Orange Spritz Cocktail<br>(12 пирамидок)</a></td>
+                                <th align=center><input type="text" name="TeaCount54" size=3 maxlength=3 value="0"></th>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName55" value="Easter Collection (10 г)">
+                                <th><a name="ProductThree">Easter Collection<br>(10 г)</a></td>
+                                <th align=center><input type="text" name="TeaCount55" size=3 maxlength=3 value="0"></th>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName56" value="Gold Dreams (100 г)">
+                                <th><a name="ProductThree">Gold Dreams<br>(100 г)</a></td>
+                                <th align=center><input type="text" name="TeaCount56" size=3 maxlength=3 value="0"></th>
+                            </tr>
+
+                            <tr>
+                                <input type="hidden" name="TeaName57" value="Magic Mask (20 пирамидок)">
+                                <th><a name="ProductThree">Magic Mask<br>(20 пирамидок)</a></td>
+                                <th align=center><input type="text" name="TeaCount57" size=3 maxlength=3 value="0"></th>
+                            </tr>
+                        </table>
+
+                    </details>
+                </th>
+            </tr>
+
+        </table>
+        <center>
+            Расскажите, откуда вы узнали про нас.<br>
+            <input type="text" name="Repost"> <br>
+            Укажите адрес доставки и расстояние в км.<br>
+            <input type="text" name="Repost" value="Город, улица, дом и квартира."><br>
+            <input type="text" name="Repost" value="Расстояние."><br>
+            <th colspan=2 align=center>Доставка Бесплатная, независимо от того, где Вы живете.<br></th>
+            <th colspan=2 align=center><input type=submit value="Отправить заказ"></th>
+        </center>
+    </form>
+    {{end}}
+</body>
+
+</html>
