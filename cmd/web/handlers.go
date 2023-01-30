@@ -123,6 +123,7 @@ func Shop(w http.ResponseWriter, r *http.Request) {
 		TeaCount57: r.FormValue("TeaCount57"),
 		TeaName57:  r.FormValue("TeaName57"),
 	}
+
 	ListTeaValueString := map[string]string{
 		details.TeaName11: details.TeaCount11,
 		details.TeaName12: details.TeaCount12,
@@ -183,6 +184,21 @@ func Shop(w http.ResponseWriter, r *http.Request) {
 		Amount: amount,
 		Discount: discount*1000,
 	}
+
+	ListCity := map[string]float64{
+		"Стерлитамак": 128.0,
+		"Салават": 162.0,
+		"Ташкиново": 206.0,
+		"Нефтекамск": 216.0,
+		"Бугульма": 235.0,
+		"Сарапул": 282.0,
+		"Альметьевск": 291.0,
+		"Златоуст": 284.0,
+		"Магнитогорск": 340.0,
+	}
+	
+	_ = ListCity
+	
 
 	fmt.Println(ListTeaValueInt)
 

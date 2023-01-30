@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>КНИЖНЫЙ МАГАЗИН</title>
+    <title>Магазин чая</title>
 </head>
 
 <body>
@@ -14,18 +14,20 @@
         <h2>Форма заказа</h2>
     </center>
     {{if .Success}}
-    <center><h3>Вы заказали: </br>
-        {{range $key, $value := .ListTea}}
-        {{if ne $value 0}}
-        {{ $key }} : {{ $value }} пачек<br>
-        {{end}}
-        {{end}}
-        С Вас {{ .Cost }} денег. <br><br>
-        При покупке от 10 действует 10% скидка. <br>
-        При покупке от 20 действует 10% скидка. <br>
-        И так до 50. <br>
-        В таком случае, с Вас {{ .Discount }} денег.<br><br>
-    </h3></center>
+    <center>
+        <h3>Вы заказали: </br>
+            {{range $key, $value := .ListTea}}
+            {{if ne $value 0}}
+            {{ $key }} : {{ $value }} пачек<br>
+            {{end}}
+            {{end}}
+            С Вас {{ .Cost }} денег. <br><br>
+            При покупке от 10 действует 10% скидка. <br>
+            При покупке от 20 действует 10% скидка. <br>
+            И так до 50. <br>
+            В таком случае, с Вас {{ .Discount }} денег.<br><br>
+        </h3>
+    </center>
     {{else}}
     <form method=post>
         <table align="center" cellspacing="10">
@@ -319,7 +321,7 @@
             Расскажите, откуда вы узнали про нас.<br>
             <input type="text" name="Repost"> <br>
             Укажите адрес доставки и расстояние в км.<br>
-            <input type="text" name="Repost" value="Город, улица, дом и квартира."><br>
+            <input type="text" name="Adres" value="Город, улица, дом и квартира."><br>
             <input type="text" name="Repost" value="Расстояние."><br>
             <th colspan=2 align=center>Доставка Бесплатная, независимо от того, где Вы живете.<br></th>
             <th colspan=2 align=center><input type=submit value="Отправить заказ"></th>
